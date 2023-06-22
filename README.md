@@ -8,3 +8,6 @@ Sample code
 ```
 
 ```
+**Author**:
+* Katie
+* Yuepeng
