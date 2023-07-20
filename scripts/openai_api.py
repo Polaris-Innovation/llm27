@@ -5,6 +5,7 @@ import argparse
 #create an argument parser
 parser = argparse.ArgumentParser(description="OpenAI API")
 parser.add_argument('--prompt', type=str, default='write a poem', help="Set the prompt for the API")
+parser.add_argument('--max_tokens', type=int, default=5, help="Set the token size for the API")
 args = parser.parse_args()
 
 # set the api key
@@ -21,6 +22,6 @@ def call_openai_api(prompt, engine="davinci", max_tokens=5):
     )
     return response
 
-response = call_openai_api(args.prompt, max_tokens=100)
+response = call_openai_api(args.prompt, max_tokens=args.max_tokens)
 # print response text
 print(response.choices[0].text)
